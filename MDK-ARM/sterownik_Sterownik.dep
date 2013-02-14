@@ -1,5 +1,5 @@
 Dependencies for Project 'sterownik', Target 'Sterownik': (DO NOT MODIFY !)
-F (..\system_stm32f4xx.c)(0x50794151)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\system_stm32f4xx.o" --omf_browse ".\Sterownik\system_stm32f4xx.crf" --depend ".\Sterownik\system_stm32f4xx.d")
+F (..\system_stm32f4xx.c)(0x50794152)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\system_stm32f4xx.o" --omf_browse ".\Sterownik\system_stm32f4xx.crf" --depend ".\Sterownik\system_stm32f4xx.d")
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x4F854F64)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50067DE2)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB134F4)
@@ -34,7 +34,7 @@ I (..\stm32f4xx_tim.h)(0x4EAA5A4A)
 I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
-F (..\main.c)(0x51101A23)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\main.o" --omf_browse ".\Sterownik\main.crf" --depend ".\Sterownik\main.d")
+F (..\main.c)(0x511CDA51)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\main.o" --omf_browse ".\Sterownik\main.crf" --depend ".\Sterownik\main.d")
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x4F854F64)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50067DE2)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB134F4)
@@ -117,7 +117,8 @@ I (..\stm32f4xx_tim.h)(0x4EAA5A4A)
 I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
-F (..\stm32f4_discovery.c)(0x507EFB27)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stm32f4_discovery.o" --omf_browse ".\Sterownik\stm32f4_discovery.crf" --depend ".\Sterownik\stm32f4_discovery.d")
+F (..\temp_adc.c)(0x511CC4D5)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\temp_adc.o" --omf_browse ".\Sterownik\temp_adc.crf" --depend ".\Sterownik\temp_adc.d")
+F (..\stm32f4_discovery.c)(0x511CC51D)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stm32f4_discovery.o" --omf_browse ".\Sterownik\stm32f4_discovery.crf" --depend ".\Sterownik\stm32f4_discovery.d")
 I (..\stm32f4_discovery.h)(0x507EFA9D)
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x4F854F64)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50067DE2)
@@ -434,7 +435,7 @@ I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
 F (..\src\startup_stm32f4xx.s)(0x4F02C428)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx --list ".\Sterownik\startup_stm32f4xx.lst" --xref -o ".\Sterownik\startup_stm32f4xx.o" --depend ".\Sterownik\startup_stm32f4xx.d")
-F (..\src\SDIO.c)(0x507EFA07)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\sdio.o" --omf_browse ".\Sterownik\sdio.crf" --depend ".\Sterownik\sdio.d")
+F (..\src\SDIO.c)(0x507EFA08)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\sdio.o" --omf_browse ".\Sterownik\sdio.crf" --depend ".\Sterownik\sdio.d")
 I (..\inc\SDIO.h)(0x4F02C428)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB134F4)
 I (..\stm32f4_discovery.h)(0x507EFA9D)
@@ -472,7 +473,7 @@ I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
 I (..\inc\UARTLib.h)(0x4F02C428)
-F (..\src\UARTLib.c)(0x507F058F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\uartlib.o" --omf_browse ".\Sterownik\uartlib.crf" --depend ".\Sterownik\uartlib.d")
+F (..\src\UARTLib.c)(0x507F0590)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O2 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\uartlib.o" --omf_browse ".\Sterownik\uartlib.crf" --depend ".\Sterownik\uartlib.d")
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x4F854F64)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50067DE2)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB134F4)

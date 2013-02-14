@@ -30,7 +30,7 @@
                                               
 /* Includes ------------------------------------------------------------------*/
  #include "stm32f4xx.h"
-   
+    
 /** @addtogroup Utilities
   * @{
   */
@@ -212,6 +212,7 @@ typedef enum
 /** @defgroup STM32F4_DISCOVERY_LOW_LEVEL_Exported_Functions
   * @{
   */
+void inicjalizacja(void);
 void STM_EVAL_LEDInit(Led_TypeDef Led);
 void STM_EVAL_LEDOn(Led_TypeDef Led);
 void STM_EVAL_LEDOff(Led_TypeDef Led);

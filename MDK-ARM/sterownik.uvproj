@@ -406,6 +406,11 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
             </File>
+            <File>
+              <FileName>temp_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\temp_adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
