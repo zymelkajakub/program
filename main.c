@@ -10,6 +10,7 @@
 	
 		Zrobione
 		
+		- dodac obsluge SSD1963 poprzez FSMC
 		- ...
 		
 		
@@ -24,7 +25,6 @@
 				- wartosc ustawionego podswietlenia
 				- wartosci min i max temperatury zewnetrznej
 			
-		- dodac obsluge SSD1963 poprzez FSMC
 		- dodac obsluge touch panelu (TSC2046, komun. SPI) lub (STMPE811 SPI/I2C)
 				oraz dodanie i obsluga przerwania od touch panelu
 		- komunikcja z czescia mocy RS485
@@ -41,8 +41,11 @@
 #include <stdio.h>
 #include <math.h>
 #include "stm32f4_discovery.h"
-#include "cyfry_duze.c"
-#include "temp_adc.h"
+#include "stm32f4_ssd1963_fsmc.h"
+//#include "cyfry_duze.c"
+//#include "temp_adc.h"
+#include "fonts.c"
+#include "fonts.h"
 
 
 /* Zmienne ---------------------------------------------------------*/
@@ -52,16 +55,19 @@ uint16_t temp_wody=0;
 double temp_wewn=0,temp_zewn=0;
 
 /* Prototypy funkcji -----------------------------------------------*/
-void pisz_liczbe(double liczba, uint16_t pozx, uint16_t pozy);
-void pisz_liczbe1(double liczba, uint16_t pozx, uint16_t pozy);
-void Delay(__IO uint32_t nCount);
-
+/*void pisz_liczbe(double liczba, uint16_t pozx, uint16_t pozy);
+void pisz_liczbe1(double liczba, uint16_t pozx, uint16_t pozy);*/
 
 int main(void)
 {
+
+//	Touch_Init();					// Inicjalizacja kontrolera Touch panel'u STMPE811
+	LCD_SSD1963_Init();		// Inicjalizacja kontrolera wyswietlacza SSD1963
 	
-	inicjalizacja();	// Inicjalizacja peryferiow i wyswietlenie interfejsu bez temperatur
-		
+//	inicjalizacja();	// Inicjalizacja peryferiow i wyswietlenie interfejsu bez temperatur
+
+
+	
 	while(1)
 	{
 			/*
@@ -74,21 +80,8 @@ int main(void)
 	}
 }
 
-	
-	
-		
-/**
-  * @brief  Delay Function.
-  * @param  nCount:specifies the Delay time length.
-  * @retval None
-  */
-void Delay(__IO uint32_t nCount)
-{
-  while(nCount--)
-  {
-  }
-}
 
+/*
 void pisz_liczbe(double liczba, uint16_t pozx, uint16_t pozy)
 {
 	uint8_t a,b,c,d,e;
@@ -141,7 +134,7 @@ void pisz_liczbe1(double liczba, uint16_t pozx, uint16_t pozy)
 	if (dd1==d) {} else { 										SSD1963_FillArea(pozx+439,pozx+577,  pozy, pozy+166, czarny); pisz_cyfre(d, pozx+439, pozy); dd1 = d;}
 
 }
-
+*/
 
 /*
 TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint32_t BufferLength)
@@ -346,3 +339,127 @@ pisz_liczbe1(liczba, y, x);
 		*/
 		
 //		GPIOD->ODR ^= GPIO_Pin_5; 		// zmiana stanu na porcie		
+
+/*-------------------------------------------------------
+	  czyszczenie ekranu na czarno
+  -------------------------------------------------------
+	LCD_WriteReg(SSD2119_RAM_DATA_REG, 0x0000);
+  for(ulCount = 0; ulCount < (LCD_PIXEL_WIDTH * LCD_PIXEL_HEIGHT); ulCount++)
+  {
+    LCD_WriteRAM(0x0000);
+  }
+  LCD_SetFont(&LCD_DEFAULT_FONT);
+	
+		*/
+		
+		
+/*
+
+uint8_t podsw_max=0;												// wartosc zczytywana z karty podczas pierwszego uruchomienia
+uint32_t sektor=0;
+uint8_t outbuf[512];
+uint8_t inbuf[512];
+uint16_t z,x,w16bit;
+
+void inicjalizacja(void)
+{
+	volatile uint32_t i=0,j=0;	
+	
+	*/// Enable GPIOA, GPIOD, GPIOE, GPIOF and GPIOG interface clock
+//  RCC->AHB1ENR   = 0x0000001D;
+  
+	/* Connect PAx pins to FSMC Alternate function */
+/*GPIOA->AFR[0]  = 0x00cc00cc;
+  GPIOA->AFR[1]  = 0xcc0ccccc;*/
+  /* Configure PAx pins in General purpose output mode */  
+//  GPIOA->MODER   = 0xA8040000;
+  /* Configure PAx pins speed to 2 MHz */  
+//  GPIOA->OSPEEDR = 0x00000000;
+  /* Configure PAx pins Output type to push-pull */  
+//  GPIOA->OTYPER  = 0x00000000;
+  /* Pull-up for PAx pins */ 
+//  GPIOA->PUPDR   = 0x64000000;
+//	GPIOA->BSRRH	 = (1 << 9);
+
+  /* Connect PDx pins to FSMC Alternate function */
+/*GPIOD->AFR[0]  = 0x00cc00cc;
+  GPIOD->AFR[1]  = 0xcc0ccccc;*/
+  /* Configure PDx pins in General purpose output mode */  
+//  GPIOD->MODER   = 0x55400400;
+  /* Configure PDx pins speed to 2 MHz */  
+//  GPIOD->OSPEEDR = 0x00000000;
+  /* Configure PDx pins Output type to push-pull */  
+//  GPIOD->OTYPER  = 0x00000000;
+  /* Pull-up for PDx pins */ 
+//  GPIOD->PUPDR   = 0x55400400;
+	
+  /* Connect PEx pins to FSMC Alternate function */
+/*GPIOE->AFR[0]  = 0xc00cc0cc;
+  GPIOE->AFR[1]  = 0xcccccccc;*/
+  /* Configure PEx pins in General purpose output mode */ 
+//  GPIOE->MODER   = 0x55555555;
+  /* Configure PEx pins speed to 2 MHz */ 
+//  GPIOE->OSPEEDR = 0x00000000;
+  /* Configure PEx pins Output type to push-pull */  
+//  GPIOE->OTYPER  = 0x00000000;
+  /* Pull-up for PEx pins */ 
+//  GPIOE->PUPDR   = 0x55555555;
+	
+/*	GPIOD->BSRRH 	 = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+	GPIOD->BSRRL 	 = GPIO_Pin_5;
+			
+//	SSD1963_Init();				// Inicjalizacja wyswietlacza i wygaszenie podswietlenia
+//	SetBacklight(0x00);
+	
+	UART_LowLevel_Init(); // Inicjalizacja interfejsu RS
+	ADC3_DMA_Config();		// Inicjalizacja przetwornikow ADC	
+  SD_LowLevel_Init();   // Inicjalizacja pinow, tablicy wektorow oraz interfejsu SDIO
+	
+  UART_SendLine("LCD, LED, UART initialization OK.\r\n");
+	UART_SendLine("Initialize SD Card...\r\n");
+	
+	if ( GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_0) == (uint8_t)Bit_RESET )
+	{
+		UART_SendLine("SD Card detected...\r\n");
+		SD_Init();  //Po powrocie z tej funkcji karta sd jest w trybie "transfer mode".
+		UART_SendLine("SD Card initialization OK\r\n");	
+	} else
+		{
+			UART_SendLine("SD Card NOT detected.\r\n");
+			while(1)
+			{};
+		}
+
+	UART_SendLine("\r\n");
+	UART_SendLine("Czyszczenie LCD...\r\n");
+	SSD1963_ClearScreen(czarny);
+	
+	UART_SendLine("Wyswietlenie interfejsu bez temperatur (sektory 1500..2999)...\r\n");
+	SSD1963_SetArea(0, TFT_WIDTH-1 , 0, TFT_HEIGHT-1);
+	SSD1963_WriteCommand(0x2c);
+	sektor=1500;
+	while(sektor<3000)
+	{
+		// Read block of 512 bytes from sektor
+		SD_ReadSingleBlock(inbuf, sektor);
+		z = 0x100;
+		while(z>0)
+		{
+			x = 256 - z;
+			w16bit = (((((inbuf[x*2]) << 8 ) & 0xFF00)) + (inbuf[(x*2)+1]));
+			SSD1963_WriteData(w16bit);
+			z--;
+		}
+		sektor++;
+	}
+	
+	
+	for(i=0x00;i<0xpodsw_max;i++)		// Stopniowe zwiekszenie podswietlenia LCD do wartosci podsw_max
+	{
+		Delay(50);
+		SetBacklight(i);
+	}
+	
+}
+
+		*/

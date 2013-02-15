@@ -416,6 +416,11 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4_discovery.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4_ssd1963_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4_ssd1963_fsmc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -477,14 +482,14 @@
           <GroupName>Lib</GroupName>
           <Files>
             <File>
-              <FileName>SDIO.c</FileName>
+              <FileName>fonts.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\SDIO.c</FilePath>
+              <FilePath>..\fonts.c</FilePath>
             </File>
             <File>
-              <FileName>UARTLib.c</FileName>
+              <FileName>tekst.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\UARTLib.c</FilePath>
+              <FilePath>..\tekst.c</FilePath>
             </File>
           </Files>
         </Group>

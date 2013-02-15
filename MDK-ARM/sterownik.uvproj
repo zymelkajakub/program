@@ -406,11 +406,6 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
             </File>
-            <File>
-              <FileName>temp_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\temp_adc.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -420,6 +415,11 @@
               <FileName>stm32f4_discovery.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\stm32f4_discovery.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4_ssd1963_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4_ssd1963_fsmc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -466,6 +466,21 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_adc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_fsmc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_i2c.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -480,18 +495,6 @@
         </Group>
         <Group>
           <GroupName>Lib</GroupName>
-          <Files>
-            <File>
-              <FileName>SDIO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\SDIO.c</FilePath>
-            </File>
-            <File>
-              <FileName>UARTLib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\UARTLib.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

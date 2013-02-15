@@ -128,31 +128,64 @@ typedef enum
   */ 
   
 
-/** @addtogroup STM324xG_EVAL_LOW_LEVEL_COM
+/** @addtogroup STM32F4_DISCOVERY_LOW_LEVEL_USART
   * @{
   */
-#define COMn                             1
+#define COMn                             2
+/**
+ * @brief Definition for COM port3, connected to USART1
+ */ 
+#define EVAL_COM3                        USART1
+#define EVAL_COM3_CLK                    RCC_APB2Periph_USART1
+#define EVAL_COM3_TX_PIN                 GPIO_Pin_9
+#define EVAL_COM3_TX_GPIO_PORT           GPIOA
+#define EVAL_COM3_TX_GPIO_CLK            RCC_AHB1Periph_GPIOA
+#define EVAL_COM3_TX_SOURCE              GPIO_PinSource9
+#define EVAL_COM3_TX_AF                  GPIO_AF_USART1
+#define EVAL_COM3_RX_PIN                 GPIO_Pin_10
+#define EVAL_COM3_RX_GPIO_PORT           GPIOA
+#define EVAL_COM3_RX_GPIO_CLK            RCC_AHB1Periph_GPIOA
+#define EVAL_COM3_RX_SOURCE              GPIO_PinSource10
+#define EVAL_COM3_RX_AF                  GPIO_AF_USART1
+#define EVAL_COM3_IRQn                   USART1_IRQn
 
 /**
- * @brief Definition for COM port1, connected to USART3
- */ 
-#define EVAL_COM1                        USART3
-#define EVAL_COM1_CLK                    RCC_APB1Periph_USART3
-#define EVAL_COM1_TX_PIN                 GPIO_Pin_10
+ * @brief Definition for COM port2, connected to USART3
+ */
+#define EVAL_COM2                        USART3
+#define EVAL_COM2_CLK                    RCC_APB1Periph_USART3
+#define EVAL_COM2_TX_PIN                 GPIO_Pin_10
+#define EVAL_COM2_TX_GPIO_PORT           GPIOC
+#define EVAL_COM2_TX_GPIO_CLK            RCC_AHB1Periph_GPIOC
+#define EVAL_COM2_TX_SOURCE              GPIO_PinSource10
+#define EVAL_COM2_TX_AF                  GPIO_AF_USART3
+#define EVAL_COM2_RX_PIN                 GPIO_Pin_11
+#define EVAL_COM2_RX_GPIO_PORT           GPIOC
+#define EVAL_COM2_RX_GPIO_CLK            RCC_AHB1Periph_GPIOC
+#define EVAL_COM2_RX_SOURCE              GPIO_PinSource11
+#define EVAL_COM2_RX_AF                  GPIO_AF_USART3
+#define EVAL_COM2_IRQn                   USART3_IRQn
+
+/**
+ * @brief Definition for COM port1, connected to USART4
+ */
+#define EVAL_COM1                        USART6
+#define EVAL_COM1_CLK                    RCC_APB2Periph_USART6
+#define EVAL_COM1_TX_PIN                 GPIO_Pin_6
 #define EVAL_COM1_TX_GPIO_PORT           GPIOC
 #define EVAL_COM1_TX_GPIO_CLK            RCC_AHB1Periph_GPIOC
-#define EVAL_COM1_TX_SOURCE              GPIO_PinSource10
-#define EVAL_COM1_TX_AF                  GPIO_AF_USART3
-#define EVAL_COM1_RX_PIN                 GPIO_Pin_11
+#define EVAL_COM1_TX_SOURCE              GPIO_PinSource6
+#define EVAL_COM1_TX_AF                  GPIO_AF_USART6
+#define EVAL_COM1_RX_PIN                 GPIO_Pin_7
 #define EVAL_COM1_RX_GPIO_PORT           GPIOC
 #define EVAL_COM1_RX_GPIO_CLK            RCC_AHB1Periph_GPIOC
-#define EVAL_COM1_RX_SOURCE              GPIO_PinSource11
-#define EVAL_COM1_RX_AF                  GPIO_AF_USART3
-#define EVAL_COM1_IRQn                   USART3_IRQn
+#define EVAL_COM1_RX_SOURCE              GPIO_PinSource7
+#define EVAL_COM1_RX_AF                  GPIO_AF_USART6
+#define EVAL_COM1_IRQn                   USART6_IRQn
 
 /**
   * @}
-  */ 	
+  */ 	 
 
 
 /**
@@ -212,7 +245,7 @@ typedef enum
 /** @defgroup STM32F4_DISCOVERY_LOW_LEVEL_Exported_Functions
   * @{
   */
-void inicjalizacja(void);
+//void inicjalizacja(void);
 void STM_EVAL_LEDInit(Led_TypeDef Led);
 void STM_EVAL_LEDOn(Led_TypeDef Led);
 void STM_EVAL_LEDOff(Led_TypeDef Led);
