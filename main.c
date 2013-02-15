@@ -11,6 +11,8 @@
 		Zrobione
 		
 		- dodac obsluge SSD1963 poprzez FSMC
+		- dodac obsluge touch panelu (TSC2046, komun. SPI) lub (STMPE811 SPI/I2C)
+				oraz dodanie i obsluga przerwania od touch panelu
 		- ...
 		
 		
@@ -25,8 +27,6 @@
 				- wartosc ustawionego podswietlenia
 				- wartosci min i max temperatury zewnetrznej
 			
-		- dodac obsluge touch panelu (TSC2046, komun. SPI) lub (STMPE811 SPI/I2C)
-				oraz dodanie i obsluga przerwania od touch panelu
 		- komunikcja z czescia mocy RS485
 		- dodac przerwanie co 0,5s i w obsludze pomiar 2 temperatur zewn i wewn z ADC'ka z usrednianiem
 				funkcja czytaj_temp_adc(double (uint16_t)(stara_temp*10), uint8_t adc)
@@ -35,18 +35,20 @@
 */
 
 
-
-
 #include "stm32f4xx.h"
 #include <stdio.h>
 #include <math.h>
+
+void delay(__IO uint32_t nCount);
+
 #include "stm32f4_discovery.h"
 #include "stm32f4_ssd1963_fsmc.h"
 //#include "cyfry_duze.c"
 //#include "temp_adc.h"
 #include "fonts.c"
 #include "fonts.h"
-
+#include "inc\STMPE811QTR.h"
+#include "inc\LCD_Touch_Calibration.h"
 
 /* Zmienne ---------------------------------------------------------*/
 
@@ -58,10 +60,11 @@ double temp_wewn=0,temp_zewn=0;
 /*void pisz_liczbe(double liczba, uint16_t pozx, uint16_t pozy);
 void pisz_liczbe1(double liczba, uint16_t pozx, uint16_t pozy);*/
 
+
 int main(void)
 {
 
-//	Touch_Init();					// Inicjalizacja kontrolera Touch panel'u STMPE811
+	IOE_Config();	  			// Inicjalizacja kontrolera Touch panel'u STMPE811
 	LCD_SSD1963_Init();		// Inicjalizacja kontrolera wyswietlacza SSD1963
 	
 //	inicjalizacja();	// Inicjalizacja peryferiow i wyswietlenie interfejsu bez temperatur
@@ -80,6 +83,16 @@ int main(void)
 	}
 }
 
+/**
+  * @brief  Inserts a delay time.
+  * @param  nCount: specifies the delay time length.
+  * @retval None
+  */
+void delay(__IO uint32_t nCount)
+{
+  __IO uint32_t index = 0; 
+  for (index = (100000 * nCount); index != 0; index--);
+}
 
 /*
 void pisz_liczbe(double liczba, uint16_t pozx, uint16_t pozy)

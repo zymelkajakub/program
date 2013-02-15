@@ -23,9 +23,9 @@
 #include <stdio.h>
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
-#include "stm32f4_discovery_lcd.h"
-#include "stmpe811qtr.h"
-#include "LCD_Touch_Calibration.h"
+#include "stm32f4_ssd1963_fsmc.h"
+#include "inc\STMPE811QTR.h"
+#include "inc\LCD_Touch_Calibration.h"
 
 /** @defgroup STM32F4xx_StdPeriph_Examples
   * @{
@@ -205,7 +205,7 @@ void Lcd_Touch_Calibration(void)
         || tst_point.y > (point_Base[4].y + CALIBRATION_RANGE)
         || tst_point.y < (point_Base[4].y - CALIBRATION_RANGE)) {
       adjust_OK_Falg = 0;
-      LCD_DisplayStringLine(LINE(8),"   Calibration Fail!    ");
+      LCD_DisplayStringLine(LINE(8),0,"   Calibration Fail!    ");
       delay(200);
       LCD_Clear(White);
       delay(300);
@@ -213,7 +213,7 @@ void Lcd_Touch_Calibration(void)
       adjust_OK_Falg = 1;
     }
   }
-  LCD_DisplayStringLine(LINE(8),"   Calibration OK!    ");
+  LCD_DisplayStringLine(LINE(8),0,"   Calibration OK!    ");
   delay(200);
 }
 
@@ -237,7 +237,7 @@ void Calibration_Test_Dispose(void)
   /*Display backgroup of LCD*/
   LCD_Clear(White);
   LCD_SetTextColor(Red);
-  LCD_DisplayStringLine(LINE(9),"        please touch the screen          "); 
+  LCD_DisplayStringLine(LINE(9),0,"        please touch the screen          "); 
   while (1) {
     do {
       pstate = IOE_TS_GetState();
@@ -259,9 +259,9 @@ void Calibration_Test_Dispose(void)
     }
     LCD_SetTextColor(Blue);
     sprintf((char*)text,"   X_AD = %d ",point_new.x);
-    LCD_DisplayStringLine(LINE(4),text);
+    LCD_DisplayStringLine(LINE(4),0,text);
     sprintf((char*)text,"   y_AD = %d ",point_new.y);
-    LCD_DisplayStringLine(LINE(5),text);
+    LCD_DisplayStringLine(LINE(5),0,text);
     /*Calculate coordinates*/
     point_new.x = ((int)(point_new.x * adjust_Para.xScale - adjust_Para.xOffset));
     point_new.y = ((int)(point_new.y * adjust_Para.yScale - adjust_Para.yOffset));
@@ -273,9 +273,9 @@ void Calibration_Test_Dispose(void)
       point_new.y = LCD_PIXEL_HEIGHT -1;
     }
     sprintf((char*)text,"   X_POS = %d ", point_new.x);
-    LCD_DisplayStringLine(LINE(7),text);
+    LCD_DisplayStringLine(LINE(7),0,text);
     sprintf((char*)text,"   y_POS = %d ", point_new.y);
-    LCD_DisplayStringLine(LINE(8),text);
+    LCD_DisplayStringLine(LINE(8),0,text);
     LCD_SetTextColor(Red); 
     /*Judge whether the inut point is the 1st point*/ 
     if ((point_old.x == 0) && (point_old.y == 0)) {

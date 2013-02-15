@@ -406,6 +406,16 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_it.c</FilePath>
             </File>
+            <File>
+              <FileName>STMPE811QTR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\STMPE811QTR.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_Touch_Calibration.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\LCD_Touch_Calibration.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -466,6 +476,21 @@
               <FileType>1</FileType>
               <FilePath>..\stm32f4xx_adc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_sdio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_sdio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_fsmc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f4xx_i2c.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -480,18 +505,6 @@
         </Group>
         <Group>
           <GroupName>Lib</GroupName>
-          <Files>
-            <File>
-              <FileName>fonts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\fonts.c</FilePath>
-            </File>
-            <File>
-              <FileName>tekst.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\tekst.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

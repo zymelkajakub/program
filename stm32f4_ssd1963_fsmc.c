@@ -81,8 +81,9 @@ static __IO uint16_t TextColor = 0x0000, BackColor = 0xFFFF;
   */ 
 	
 #ifndef USE_Delay
-static void delay(__IO uint32_t nCount);
+extern void delay(__IO uint32_t nCount);
 #endif /*USE_Delay*/
+
 
 //static void PutPixel(int16_t x, int16_t y);
 static void LCD_PolyLineRelativeClosed(pPoint Points, uint16_t PointCount, uint16_t Closed);
@@ -334,20 +335,6 @@ void LCD_FSMCConfig(void)
 }
 
 /**
-  * @brief  Delay Function.
-  * @param  nCount:specifies the Delay time length.
-  * @retval None
-  */
-static void delay(__IO uint32_t nCount)
-{
-  while(nCount--)
-  {
-  }
-};
-
-
-
-/**
   * @brief  LCD Init.
   * @retval None
   */
@@ -588,7 +575,7 @@ void SSD1963_FillArea(uint16_t sx, uint16_t ex, uint16_t sy, uint16_t ey, uint16
 //=============================================================================
 // Fills whole screen specified color
 //=============================================================================
-void SSD1963_ClearScreen(uint16_t color)
+void LCD_Clear(uint16_t color)
 {
 	uint16_t x,y;
 //	TE = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_10);
