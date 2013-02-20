@@ -19,7 +19,7 @@
 		
 		TODO
 		
-		- w obsludze LCD'ka sprawdzic czy piny podl. sa odpowiednie  <- !!!!@@@@!!!!
+		- w driverze LCD'ka sprawdzic czy piny skonfigurowane sa odpowiednio  <- !!!!@@@@!!!!
 		
 		- stworzenie obrazu karty SD wraz z opisem adresowym poszczegolnych danych
 		- po uruchomieniu urzadzenia pobieranie ustawien z karty SD z bloku 1:

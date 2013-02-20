@@ -685,7 +685,11 @@ void LCD_pisz_znak(uint16_t Xpos, uint16_t Ypos, uint16_t ascii)
 {
   uint32_t index = 0, i = 0, j=1;
 	uint8_t character = ascii - 0x20;
-	SSD1963_SetArea(Xpos, Xpos+(tekst[character][0])-1, Ypos, Ypos+23);
+	if (ascii == 'p' || ascii == 'q')
+	 {
+		 SSD1963_SetArea(Xpos, Xpos+(tekst[character][0])-1, Ypos+7, Ypos+30);
+	 }else 	SSD1963_SetArea(Xpos, Xpos+(tekst[character][0])-1, Ypos, Ypos+23);
+	 
 	LCD_CMD = SSD1963_WRITE_MEMORY_START;
   for(index = 0; index < tekst[character][0]; index++)
   {

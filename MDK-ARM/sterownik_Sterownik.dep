@@ -40,7 +40,7 @@ I (..\stm32f4_ssd1963_fsmc.h)(0x511E0EE0)
 I (..\fonts.h)(0x507B040A)
 I (..\inc\STMPE811QTR.h)(0x51246C18)
 I (..\inc\LCD_Touch_Calibration.h)(0x50E93680)
-F (..\main.c)(0x51247D2F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\main.o" --omf_browse ".\Sterownik\main.crf" --depend ".\Sterownik\main.d")
+F (..\main.c)(0x5124A62B)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\main.o" --omf_browse ".\Sterownik\main.crf" --depend ".\Sterownik\main.d")
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x5077E632)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50066FD2)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB126E4)
@@ -119,7 +119,7 @@ I (..\stm32f4xx_tim.h)(0x4EAA5A4A)
 I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
-F (..\src\STMPE811QTR.c)(0x51248174)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stmpe811qtr.o" --omf_browse ".\Sterownik\stmpe811qtr.crf" --depend ".\Sterownik\stmpe811qtr.d")
+F (..\src\STMPE811QTR.c)(0x512488C6)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stmpe811qtr.o" --omf_browse ".\Sterownik\stmpe811qtr.crf" --depend ".\Sterownik\stmpe811qtr.d")
 I (..\inc\STMPE811QTR.h)(0x51246C18)
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x5077E632)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50066FD2)
@@ -190,7 +190,7 @@ I (..\stm32f4xx_tim.h)(0x4EAA5A4A)
 I (..\stm32f4xx_usart.h)(0x4EAA5A4A)
 I (..\stm32f4xx_wwdg.h)(0x4EAA5A4A)
 I (..\misc.h)(0x4EAA5A4A)
-F (..\stm32f4_ssd1963_fsmc.c)(0x51247F48)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stm32f4_ssd1963_fsmc.o" --omf_browse ".\Sterownik\stm32f4_ssd1963_fsmc.crf" --depend ".\Sterownik\stm32f4_ssd1963_fsmc.d")
+F (..\stm32f4_ssd1963_fsmc.c)(0x5124DE1E)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O1 --apcs=interwork -I..\ -I..\..\..\Libraries\CMSIS\Include -I..\..\..\Libraries\CMSIS\ST\STM32F4xx\Include -I..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\Utilities\STM32F4-Discovery -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F4xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX -DMANGUSTA_DISCOVERY -DUSE_USB_OTG_FS -DHSE_VALUE="8000000" -o ".\Sterownik\stm32f4_ssd1963_fsmc.o" --omf_browse ".\Sterownik\stm32f4_ssd1963_fsmc.crf" --depend ".\Sterownik\stm32f4_ssd1963_fsmc.d")
 I (C:\Keil\ARM\Inc\ST\STM32F4xx\stm32f4xx.h)(0x5077E632)
 I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x50066FD2)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB126E4)
