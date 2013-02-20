@@ -4,9 +4,7 @@
   * @author  MCD Application Team
   * @version V1.0.0
   * @date    30-September-2011
-  * @brief   This file includes the LCD driver for AM-240320L8TNQW00H (LCD_ILI9320)
-  *          and AM240320D5TOQW01H (LCD_ILI9325) Liquid Crystal Display Modules
-  *          of STM324xG-EVAL evaluation board(MB786) RevB.
+  * @brief   This file includes the driver for SSD1963 LCD Controller.
   ******************************************************************************
 **/
 
@@ -15,7 +13,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "stm32f4_ssd1963_fsmc.h"
-#include "tekst.c"
+#include "tekst.h"
 
 /** @addtogroup Utilities
   * @{
@@ -438,15 +436,12 @@ void LCD_SSD1963_Init (void)
 void SetBacklight(uint8_t intensity)
 {
         LCD_CMD = 0xBE;                        // Set PWM configuration for backlight control
-//        SSD1963_PIN_CS = 0;
         LCD_Data= 0x0E;                        // PWMF[7:0] = 2, PWM base freq = PLL/(256*(1+5))/256 =
                                                                 // 300Hz for a PLL freq = 120MHz
         LCD_Data= intensity;                // Set duty cycle, from 0x00 (total pull-down) to 0xFF
                                                                 // (99% pull-up , 255/256)
         LCD_Data= 0x01;                        // PWM enabled and controlled by host (mcu)
         LCD_Data= 0x00;
-
-//        CS_LAT_BIT = 1;
 }
 
 /**

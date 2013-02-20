@@ -5,7 +5,7 @@
   * @author  CMP Team
   * @version V1.0.0
   * @date    28-December-2012
-  * @brief   LCD touch screen controler driver      
+  * @brief   LCD touch screen controler (STMPE811QTR) driver      
   ******************************************************************************
   * @attention
   *
@@ -71,7 +71,7 @@ static void delay(__IO uint32_t nCount);
   * @param  None
   * @retval IOE_OK if all initializations done correctly. Other value if error.
   */
-uint8_t IOE_Config(void)
+uint8_t Touch_init(void)
 {
   /* Configure the needed pins */
   IOE_GPIO_Config(); 
@@ -973,9 +973,9 @@ uint16_t IOE_TS_Read_X(void)
   x = I2C_ReadDataBuffer(IOE_1_ADDR, IOE_REG_TSC_DATA_X);
 	
   /* first correction */
-  xr =  (x * 320) >> 12;
+  xr =  (x * 800) >> 12;
   /* second correction */
-  xr = ((xr * 32)/29) - 17;
+  xr = ((xr * 80)/72) - 41;
 
   if (xr <= 0) {
     xr = 0;
@@ -1010,8 +1010,8 @@ uint16_t IOE_TS_Read_Y(void)
   int32_t y, yr;
   y= I2C_ReadDataBuffer(IOE_1_ADDR, IOE_REG_TSC_DATA_Y);
 	
-  yr= (y * 240) >> 12;
-  yr = ((yr * 240) / 217) - 12;
+  yr= (y * 480) >> 12;
+  yr = ((yr * 480) / 432) - 24;
 	
   if (yr <= 0) {
     yr = 0;

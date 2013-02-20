@@ -376,7 +376,7 @@ typedef enum
 /** 
   * @brief  Configuration and initialization functions  
   */
-uint8_t IOE_Config(void);
+uint8_t Touch_init(void);
 uint8_t IOE_ITConfig(uint32_t IOE_ITSRC_Source);
 
 /** 

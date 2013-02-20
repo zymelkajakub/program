@@ -39,20 +39,20 @@
 #define CAL_POINT1_Y           (20)
 
 /*2nd calibration point position*/
-#define CAL_POINT2_X          (300)
+#define CAL_POINT2_X          (780)
 #define CAL_POINT2_Y           (20)
 
 /*3rd calibration point position*/
 #define CAL_POINT3_X           (20)
-#define CAL_POINT3_Y          (220)
+#define CAL_POINT3_Y          (460)
 
 /*4th calibration point position*/
-#define CAL_POINT4_X          (300)
-#define CAL_POINT4_Y          (220)
+#define CAL_POINT4_X          (780)
+#define CAL_POINT4_Y          (460)
 
 /*calibration test point position*/
-#define TST_POINT_X           (160)
-#define TST_POINT_Y           (120)
+#define TST_POINT_X           (400)
+#define TST_POINT_Y           (240)
 
 #define TOUCH_AD_VALUE_MAX    (4000)
 #define TOUCH_AD_VALUE_MIN    (100)
@@ -149,22 +149,20 @@ void Lcd_Touch_Calibration(void)
       delay(200);
     }
 
-    ratio1 = (float)((point_Base[1].x - point_Base[0].x) + (point_Base[3].x - point_Base[2].x)) / 2.0;
-    ratio2 = (float)((right_upper_point.x - left_upper_point.x) + (right_down_point.x - left_down_point.x)) / 2.0;
+    ratio1 = (float)((point_Base[1].x - point_Base[0].x) + (point_Base[3].x - point_Base[2].x)) / 2;
+    ratio2 = (float)((right_upper_point.x - left_upper_point.x) + (right_down_point.x - left_down_point.x)) / 2;
     adjust_Para.xScale = ratio1 / ratio2;
 
-    ratio1 = (float)((point_Base[2].y - point_Base[0].y) + 
-             (point_Base[3].y - point_Base[1].y)) / 2.0;
-    ratio2 = (float)((left_down_point.y - left_upper_point.y) + 
-             (right_down_point.y - right_upper_point.y)) / 2.0;
+    ratio1 = (float)((point_Base[2].y - point_Base[0].y) + (point_Base[3].y - point_Base[1].y)) / 2;
+    ratio2 = (float)((left_down_point.y - left_upper_point.y) + (right_down_point.y - right_upper_point.y))		/ 2;
     adjust_Para.yScale = ratio1 / ratio2;
 
     ratio1 = (((float)right_upper_point.x * adjust_Para.xScale - (float)point_Base[1].x)
-             + ((float)left_upper_point.x * adjust_Para.xScale - (float)point_Base[0].x)) / 2.0;
+             + ((float)left_upper_point.x * adjust_Para.xScale - (float)point_Base[0].x)) / 2;
     adjust_Para.xOffset = (int)ratio1;
 
     ratio1 = (((float)right_upper_point.y * adjust_Para.yScale - (float)point_Base[1].y)
-             + ((float)left_upper_point.y * adjust_Para.yScale - (float)point_Base[0].y)) / 2.0;
+             + ((float)left_upper_point.y * adjust_Para.yScale - (float)point_Base[0].y)) / 2;
 
     adjust_Para.yOffset = (int)ratio1; 
 

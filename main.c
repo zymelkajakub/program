@@ -19,17 +19,24 @@
 		
 		TODO
 		
+		- w obsludze LCD'ka sprawdzic czy piny podl. sa odpowiednie  <- !!!!@@@@!!!!
+		
 		- stworzenie obrazu karty SD wraz z opisem adresowym poszczegolnych danych
 		- po uruchomieniu urzadzenia pobieranie ustawien z karty SD z bloku 1:
 		
 				- sprawdzenie i w razie istnienia pobranie wartosci kalibracyjnych touch panelu
-				- ustawienia czujnikow
+				- ustawienia wybranych czujnikow
 				- wartosc ustawionego podswietlenia
 				- wartosci min i max temperatury zewnetrznej
 			
 		- komunikcja z czescia mocy RS485
 		- dodac przerwanie co 0,5s i w obsludze pomiar 2 temperatur zewn i wewn z ADC'ka z usrednianiem
 				funkcja czytaj_temp_adc(double (uint16_t)(stara_temp*10), uint8_t adc)
+				
+				LUB
+				
+				zaleznie od zastosowanego ukladu do obslugi Touch Panelu
+				czytac temperatury za pomoca pozostalych 4 ADC'ow w ukladzie STMPE811
 		- ...
 		
 */
@@ -64,8 +71,11 @@ void pisz_liczbe1(double liczba, uint16_t pozx, uint16_t pozy);*/
 int main(void)
 {
 
-	IOE_Config();	  			// Inicjalizacja kontrolera Touch panel'u STMPE811
+	Touch_init();	  			// Inicjalizacja kontrolera Touch panel'u STMPE811
 	LCD_SSD1963_Init();		// Inicjalizacja kontrolera wyswietlacza SSD1963
+	
+	Lcd_Touch_Calibration();  //dodac warunek sprawdzania kalibracji z SD <---@@@!!!@@@
+	
 	
 //	inicjalizacja();	// Inicjalizacja peryferiow i wyswietlenie interfejsu bez temperatur
 
